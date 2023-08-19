@@ -94,7 +94,7 @@ function AuthProvider({children}) {
 
         //Agora capturar meu user com o avatar atualizado lá no BD de dados - para fazer o restante das atualizações
         user.avatar = response.data.avatar
-        // console.log(response.data.avatar)
+        console.log(response.data.avatar)
 
       } //else { user.avatar = user.avatar}
 

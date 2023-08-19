@@ -6,7 +6,8 @@ import axios from 'axios'
 export const api = axios.create({
   //Literalmente a base da URL para acessar nosso backend-servidor
   //URL do baseURL (tem que ser maiúscula)
-  baseURL: 'http://localhost:3333/'
+  baseURL: 'https://bankin-api.onrender.com'
 })
 
 //'https://bankin-api.onrender.com'
+// 'http://localhost:3333'
