@@ -17,7 +17,7 @@ export default createGlobalStyle`
   }
 
   body, input, button, textarea {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     outline: none; //Retirar qualquer contorno
   }

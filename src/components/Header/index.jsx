@@ -1,5 +1,5 @@
 //Importar da biblioteca de ícones do react - ri (é uma das varias bibliotecas que você pode escolher de dentro da biblioteca do react) - e estou desestruturando um icone de ligas e desligar
-import { RiShutDownLine } from "react-icons/ri"
+import { FiLogOut } from "react-icons/fi"
 
 //Agora tenho que importar a função signOut (Para ligar ela ao botão de sair) - então primeiro tenha que importar o useAuth (que está armazenando minha função de signIn e signOut)
 import { useAuth } from "../../hooks/auth";
@@ -44,7 +44,7 @@ export function Header() {
       </Profile>
 
       <Logout type="button" onClick={handleSignOut}> 
-        <RiShutDownLine/>
+        <FiLogOut/>
       </Logout>
     </Container>
   );

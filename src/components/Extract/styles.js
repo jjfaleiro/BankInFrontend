@@ -24,15 +24,6 @@ export const Container = styled.button`
     align-items: center;
     gap: 50px;
 
-    > p {
-      font-size: 14px;
-      font-weight: 500;
-      padding: 6px;
-      border: 2px solid ${({theme}) => theme.COLORS.GREEN};
-      border-radius: 50%;
-      color: ${({theme}) => theme.COLORS.GREEN};
-
-    }
 
     > div {
       display: flex;
@@ -46,7 +37,7 @@ export const Container = styled.button`
       color: ${({theme}) => theme.COLORS.GREEN};
 
       p:first-child {
-        width: 70px;
+        width: 150px;
       }
 
       p:nth-child(2) {

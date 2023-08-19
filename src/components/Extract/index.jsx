@@ -15,20 +15,21 @@ export function Extract({data, ...rest}) {
     <Container {...rest}>
 
 
-      <header>Saldo anterior: {data.previousBalance}</header>
+      <header>Saldo anterior: {data.previousBalance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</header>
       <main>
-      <p>{data.id}</p>
       <div>
-        {negative === true ? <p id="negative">{data.debts}</p> : <p id="positive">{data.debts}</p> }
+        {negative === true ? <p id="negative">{data.debts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p> : <p id="positive">{data.debts.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p> }
         <p>{data.description}</p>
         <p>{data.created_at}</p>
       </div>
       </main>
-      <footer>Saldo atual: {data.currentBalance}</footer>
+      <footer>Saldo atual: {data.currentBalance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</footer>
 
     </Container>
   )
 }
+//Configurar data
+//.toLocaleString('pt-BR', { timezone: 'UTC' })
 
 /*<header>{data.previousBalance}</header>
       <div>

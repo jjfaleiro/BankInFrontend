@@ -1,7 +1,7 @@
 //Importar ícone - PLUS + Pesquisa
-import { FiPlus } from 'react-icons/fi'
+import { FiSend, FiDollarSign } from 'react-icons/fi'
 
-import { Container, Brand, Sale, Content, NewNote, NewTransfer } from './styles'
+import { Container, Brand, Sale, Content, NewNote, New } from './styles'
 
 import { Extract } from "../../components/Extract"
 
@@ -24,7 +24,7 @@ export function Home() {
     async function handleExtract() {
       const balance = await api.get(`/extract`)
       const last = balance.data.length - 1
-      const lastBalance = balance.data[last].currentBalance.toFixed(2)
+      const lastBalance = balance.data[last].currentBalance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
       // console.log(lastBalance)
       setBalance(lastBalance)
     }
@@ -58,7 +58,7 @@ export function Home() {
       <Sale>
         <div>
           <p>Saldo:</p>
-          <span>R$ {balance}</span>
+          <span>{balance}</span>
         </div>
       </Sale>
 
@@ -70,22 +70,24 @@ export function Home() {
                 key={String(debt.id)}
                 data={debt}
               />
-            ))
+            )).reverse()
           }
 
         </Section>
 
       </Content>
 
-      <NewTransfer to="/transfer">
-        <FiPlus/>
-        Transferência
-      </NewTransfer>
+      <New>
+        <NewNote to="/transfer">
+          <FiSend/>
+          <p>Transferência</p>
+        </NewNote>
 
-      <NewNote to="/new">
-        <FiPlus/>
-        Lançar Débito
-      </NewNote>
+        <NewNote to="/new">
+          <FiDollarSign/>
+          <p>Débito</p>
+        </NewNote>
+      </New>
     </Container>
   )
 }
